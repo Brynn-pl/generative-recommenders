@@ -1,0 +1,50 @@
+8.25日训练结果
+1. 
+* 特征
+            "user_id",
+            "houseid_seq",
+            "timestamp_seq",
+            "action_weight_seq",
+            "staytime_seq",
+
+* 配置
+验证:测试 = 3:1
+train_loop.num_epochs = 5
+train_loop.output_trace = True
+train_loop.metric_log_frequency = 10
+
+* 指标
+说明：
+--lifetime_ne: 从训练开始到当前的累计平均损失
+--window_ne: 在滑动窗口内（最近N个batch）的平均损失
+-- NE是负熵损失，本质上就是交叉熵损失（Cross Entropy Loss），衡量模型预测概率分布与真实标签分布之间的差异
+-- auc：ROC曲线下面积
+
+metric/lifetime_ne/is_click: 1.5541660024173707
+metric/lifetime_ne/is_like: 1.5389057533470099
+metric/window_ne/is_click: 1.5788822504183586
+metric/window_ne/is_like: 1.5687590717344928
+metric/window_auc/is_click: 0.5904111862182617
+metric/window_auc/is_like: 0.5905373692512512
+
+2. 2025_08_25_16_48_30
+
+* 配置
+验证:测试 = 9:1
+train_loop.num_epochs = 10
+train_loop.output_trace = True
+train_loop.metric_log_frequency = 10
+
+* 指标
+说明：
+--lifetime_ne: 从训练开始到当前的累计平均损失
+--window_ne: 在滑动窗口内（最近N个batch）的平均损失
+-- NE是负熵损失，本质上就是交叉熵损失（Cross Entropy Loss），衡量模型预测概率分布与真实标签分布之间的差异
+-- auc：ROC曲线下面积
+
+metric/lifetime_ne/is_click: 2.7531735747111448
+metric/lifetime_ne/is_like: 2.6724966857601054
+metric/window_ne/is_click: 2.7482238719925802
+metric/window_ne/is_like: 2.659419066377719
+metric/window_auc/is_click: 0.5469536781311035
+metric/window_auc/is_like: 0.545006513595581
